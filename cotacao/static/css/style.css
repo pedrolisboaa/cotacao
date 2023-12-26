@@ -1,0 +1,32 @@
+body{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+  
+header{
+    background-color: #000;
+    color: #fff;
+    padding: 1rem;
+}
+  
+h1{
+    text-align: center;
+  }
+  
+main{
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+  
+section{
+    padding: 1rem;
+}
+  
+footer{
+    background-color: #000;
+    color: white;
+    padding: 1rem;
+}
+  
