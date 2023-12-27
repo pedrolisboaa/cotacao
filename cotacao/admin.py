@@ -5,4 +5,4 @@ from .models import Moeda
 
 @admin.register(Moeda)
 class MoedasAdmin(admin.ModelAdmin):
-    list_display = 'sigla', 'moeda', 'bandeira',
+    list_display = 'id', 'sigla', 'moeda', 'bandeira',

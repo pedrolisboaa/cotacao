@@ -29,4 +29,8 @@ footer{
     color: white;
     padding: 1rem;
 }
+
+.container__moeda{
+    display: flex;
+}
   

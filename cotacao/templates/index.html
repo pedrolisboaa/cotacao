@@ -11,28 +11,53 @@
 <body>
 
     <header>
-        <h1>Cotação</h1>
+        <h1>Cotação em {{data}}</h1>
     </header>
 
     <main>
 
         <section>
-            {% for moeda in moedas %}
-              <p>{{moeda.sigla}} - {{moeda.moeda}}</p>
-              <img src="{{moeda.bandeira.url}}" alt="{{moeda.moeda}}">
-            {% endfor %}
-        </section>
+            <form action="{% url 'index' %}" method="POST">
+                {% csrf_token %}
+                <!--Primeiro BOX-->
+                <div class="container__moeda">
+                    <div>
+                        <select name="moeda" id="moeda">
+                            {% for moeda in moedas %}
+                                {% if moeda.id != 11 %}
+                                    <option value="{{moeda.sigla}}">{{moeda.sigla}} - {{moeda.moeda}} </option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <input type="text" value="1,00" name="moeda_cotacao">
+                </div>
+
+                <!--Segundo box BOX-->
+                <div class="container__moeda">
+                    <div>
+                        <p>{{real.sigla}} - {{real.moeda}}</p>
+                    </div>
+                    <!-- <input type="text" class="moeda-input" value="1,00"> -->
+                    <input type="text" class="moeda-input" value="{{valor_atualizado}}">
+                </div>
 
 
-        <section>
-            <h2>Seção 2</h2>
-            <p>Conteúdo da seção 2</p>
+                <input type="submit" value="Cotação">
+            </form>
+
+
+
         </section>
+
     </main>
 
     <footer>
         <p>Copyright © 2023</p>
     </footer>
+
+
+  
     
 </body>
 </html>
