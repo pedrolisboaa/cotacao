@@ -15,7 +15,6 @@
     </header>
 
     <main>
-
         <section>
             <form action="{% url 'index' %}" method="POST">
                 {% csrf_token %}
@@ -42,11 +41,8 @@
                     <input type="text" class="moeda-input" value="{{valor_atualizado}}">
                 </div>
 
-
                 <input type="submit" value="Cotação">
             </form>
-
-
 
         </section>
 
@@ -56,8 +52,5 @@
         <p>Copyright © 2023</p>
     </footer>
 
-
-  
-    
 </body>
 </html>
