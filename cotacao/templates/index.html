@@ -6,17 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
 
     <header>
-        <ul>
-            <li><a href="">Moedinha Oline</a></li>
+        <ul class="container__ul ul__primeiro">
+            <li><a href="" class="logo__header">Moedinha Oline</a></li>
             <li><a href="">Cotações</a></li>
             <li><a href="">Blog</a></li>
         </ul>
-        <ul>
+        <ul class="container__ul ul__segundo">
             <li><a href="">Dólar americano</a></li>
             <li><a href="">Euro</a></li>
             <li><a href="">Libra esterlina</a></li>
@@ -25,9 +29,11 @@
             <li><a href="">Franco suíço</a></li>
         </ul>
     </header>
-    <h1>Cotação em {{data}}</h1>
+    
 
     <main>
+        <h1>{{ valor_dolar|floatformat:2 }} Reais</h1>
+        <p class="text__main">1 {{dolar.moeda}} hoje {{data}}</p>
         <section>
             <form action="{% url 'index' %}" method="POST">
                 {% csrf_token %}
@@ -50,8 +56,8 @@
                     <div>
                         <p>{{real.sigla}} - {{real.moeda}}</p>
                     </div>
-                    <!-- <input type="text" class="moeda-input" value="1,00"> -->
-                    <input type="text" class="moeda-input" value="{{valor_atualizado}}">
+                    <input type="text" class="moeda-input" value="1,00">
+                    <!-- <input type="text" class="moeda-input" value="{{valor_atualizado}}"> -->
                 </div>
 
                 <input type="submit" value="Cotação">
