@@ -26,7 +26,8 @@ h1{
 main{
     width: 100%;
     max-width: 960px;
-    margin: 0 auto;
+    margin: 6em auto;
+    padding: 4rem 0;
     background-color: red;
     
 }
@@ -43,6 +44,7 @@ footer{
 
 .container__moeda{
     display: flex;
+    justify-content: space-evenly;
 }
 
 /*************HEADER****************/
@@ -77,4 +79,10 @@ footer{
     font-size: 14px;
     color: white;
     text-align: center;
+}
+
+
+.form{
+    display: flex;
+    justify-content: space-evenly;
 }

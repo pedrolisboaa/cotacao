@@ -30,12 +30,11 @@
         </ul>
     </header>
     
-
     <main>
         <h1>{{ valor_dolar|floatformat:2 }} Reais</h1>
         <p class="text__main">1 {{dolar.moeda}} hoje {{data}}</p>
         <section>
-            <form action="{% url 'index' %}" method="POST">
+            <form action="{% url 'index' %}" method="POST" class="form">
                 {% csrf_token %}
                 <!--Primeiro BOX-->
                 <div class="container__moeda">
@@ -60,9 +59,9 @@
                     <!-- <input type="text" class="moeda-input" value="{{valor_atualizado}}"> -->
                 </div>
 
-                <input type="submit" value="Cotação">
+                
             </form>
-
+            <input type="submit" value="Cotação">
         </section>
 
     </main>
